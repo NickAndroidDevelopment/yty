@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="vod">                            
+        <form action="get">
+            <div id="a">a = </div>
+            <input type="text" id="coefa">
+            <div id="b">b = </div>
+            <input type="text" id="coefb">
+            <div id="c">c = </div>
+            <input type="text" id="coefc" onblur="grandum()">
+
+            
+        </form>
+    </div>
+    <script>
+
+    a = document.getElementById("coefa")                  
+    b = document.getElementById("coefb")
+    c = document.getElementById("coefc")
+    function grandum(){
+        coefa = parseFloat(a.value)
+        coefb = parseFloat(b.value)
+        coefc = parseFloat(c.value)
+        bqu = coefb * coefb
+        minusb = coefb * (-1)
+        foac = 4 * coefa * coefc
+        discriminant = bqu - foac
+        dicriminantsqrt = discriminant ** 0.5
+        twoa = 2 * coefa
+        if(discriminant>0){
+            x1 = (minusb - dicriminantsqrt)/twoa
+            x2 = (minusb + dicriminantsqrt)/twoa
+            alert(`x1 = ${x1} x2 = ${x2}`)
+        }
+        else if(discriminant ==0){
+            x1 = minusb/twoa
+            alert(`x1 = ${x1}`)
+        }
+        else{
+            alert("Нет решения")
+        }
+    }
+    </script>
+</body>
+</html>
